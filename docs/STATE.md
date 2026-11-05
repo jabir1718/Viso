@@ -17,7 +17,13 @@ Repo: github.com/jabir1718/Viso
 
 ## VERIFY (khula)
 - core/build.gradle.kts: Room+KSP+Hilt plugins — CONFIRMED
-- compileSdk 36 vs AGP 8.9.2 — VERIFY: Android SDK Platform 36 installation has not been confirmed; check on the build machine
+- compileSdk 36 vs AGP 8.9.2 — VERIFY: Android SDK Platform 36 installation has not been confirmed; CI workflow will install it on the runner.
+- Gradle Wrapper — NOT COMMITTED: Termux wrapper task has not produced files. CI temporarily generates Gradle 8.11.1 wrapper files on the runner before assembleDebug; this does not add wrapper files to the repository.
+
+## CI
+- .github/workflows/build.yml — committed; runs on push to m1-skeleton or manual dispatch.
+- Runner: Ubuntu, Temurin JDK 17, Gradle 8.11.1, Android SDK Platform 36 / Build Tools 36.0.0.
+- CI build result — PENDING; do not mark M1 green until an actual successful run and APK artifact are verified.
 
 ## Agla kaam
-- M1: build green
+- M1: inspect GitHub Actions run, fix only evidenced build errors, obtain debug APK artifact, then commit generated Wrapper files to the repository.
