@@ -17,14 +17,15 @@ Repo: github.com/jabir1718/Viso
 
 ## VERIFY (khula)
 - core/build.gradle.kts: Room+KSP+Hilt plugins — CONFIRMED
-- compileSdk 36 vs AGP 8.9.2 — VERIFY: Android SDK Platform 36 installation has not been confirmed locally; CI installs it on the runner.
-- Gradle Wrapper — NOT YET COMMITTED. GitHub Actions first job generates Gradle 8.11.1 wrapper files and pushes them to m1-skeleton; second job builds from that exact commit. Confirm the commit from the workflow run.
+- compileSdk 36 — CI installs Android SDK Platform 36; actual compile not yet reached.
+- Gradle Wrapper 8.11.1 — COMMITTED by GitHub Actions at commit f402cb5227a0af38d3e7752803fa9a58f370dbba; gradlew, gradlew.bat, wrapper properties and wrapper JAR verified on branch.
 
 ## CI
-- .github/workflows/build.yml — committed; runs on push to m1-skeleton or manual dispatch.
-- Wrapper job: Ubuntu + Temurin JDK 17 + Gradle 8.11.1; commits wrapper files to m1-skeleton.
-- Build job: checks out wrapper commit, installs Android SDK Platform 36 / Build Tools 36.0.0, runs assembleDebug, uploads APK and diagnostics.
-- CI build result — PENDING; do not mark M1 green until an actual successful run and APK artifact are verified.
+- .github/workflows/build.yml — committed.
+- Wrapper job — SUCCESS: generated and committed wrapper.
+- First assemble-debug attempt — FAILED before Gradle build. android-actions/setup-android@v3 attempted to install obsolete package "tools"; sdkmanager reported "Failed to find package 'tools'".
+- Workflow corrected: setup-android now requests platform-tools only; sdkmanager explicitly installs platforms;android-36. Pinned build-tools;36.0.0 removed.
+- Retry result — PENDING. No APK artifact and no successful assembleDebug yet.
 
 ## Agla kaam
-- M1: inspect GitHub Actions run, confirm wrapper commit, fix only evidenced build errors, obtain debug APK artifact.
+- Inspect the next Actions run. If SDK setup succeeds, address only actual Gradle/build errors from logs. M1 stays pending until assembleDebug is green and APK artifact is verified.
