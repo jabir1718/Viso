@@ -8,6 +8,10 @@ plugins {
 android {
     namespace = "com.viso.core"
     compileSdk = 36
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
     defaultConfig { minSdk = 26 }
 }
 
