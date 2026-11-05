@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Viso</string>
+    <string name="nav_editor">Editor</string>
+    <string name="nav_audio">Audio</string>
+    <string name="nav_visualizer">Visualizer</string>
+    <string name="nav_lyrics">Lyrics</string>
+    <string name="nav_copyright">Copyright</string>
+    <string name="nav_export">Export</string>
+    <string name="empty_editor_title">Your next edit starts here</string>
+    <string name="empty_editor_body">Create a project or import media to begin building your video.</string>
+    <string name="empty_audio_title">Shape your sound</string>
+    <string name="empty_audio_body">Audio tools and tracks will appear here when a project is open.</string>
+    <string name="empty_visualizer_title">Make sound visible</string>
+    <string name="empty_visualizer_body">Create reactive visuals driven by your music and audio.</string>
+    <string name="empty_lyrics_title">Bring words to the beat</string>
+    <string name="empty_lyrics_body">Transcribe, sync, and style lyrics for your video.</string>
+    <string name="empty_copyright_title">Know your assets</string>
+    <string name="empty_copyright_body">Review source, license, and attribution details for project media.</string>
+    <string name="empty_export_title">Ready when you are</string>
+    <string name="empty_export_body">Your render settings and export queue will appear here.</string>
+</resources>
