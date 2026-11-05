@@ -158,10 +158,11 @@ Then run:
 - PowerShell: ` .\gradlew.bat assembleDebug --stacktrace `
 - macOS/Linux/Git Bash: `./gradlew assembleDebug --stacktrace`
 
-Use JDK 17 as the conservative baseline (JDK 21 may be compatible; verify if errors indicate otherwise). Android SDK Platform 36 is reported installed. Do not commit local.properties. If SDK location is missing, set the actual local sdk.dir in local.properties on the developer machine.
+Use JDK 17 as the conservative baseline (JDK 21 may be compatible; verify if errors indicate otherwise). VERIFY: Android SDK Platform 36 installation has not been confirmed; check the SDK Manager on the build machine before assuming it is installed. Do not commit local.properties. If SDK location is missing, set the actual local sdk.dir in local.properties on the developer machine.
 
 ## M1 verified repository facts at last inspection
 - Branch: m1-skeleton.
+- Android SDK Platform 36 installation: VERIFY; not confirmed yet.
 - core/build.gradle.kts includes Android library, Kotlin Android, KSP and Hilt plugins; Room runtime/ktx/compiler and Hilt Android/compiler dependencies; Room schemaLocation configured.
 - .gitignore ignores local.properties and build outputs; it does not ignore Gradle wrapper files.
 - Gradle wrapper files listed above were absent.
