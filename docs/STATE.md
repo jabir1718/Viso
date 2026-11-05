@@ -17,13 +17,14 @@ Repo: github.com/jabir1718/Viso
 
 ## VERIFY (khula)
 - core/build.gradle.kts: Room+KSP+Hilt plugins — CONFIRMED
-- compileSdk 36 vs AGP 8.9.2 — VERIFY: Android SDK Platform 36 installation has not been confirmed; CI workflow will install it on the runner.
-- Gradle Wrapper — NOT COMMITTED: Termux wrapper task has not produced files. CI temporarily generates Gradle 8.11.1 wrapper files on the runner before assembleDebug; this does not add wrapper files to the repository.
+- compileSdk 36 vs AGP 8.9.2 — VERIFY: Android SDK Platform 36 installation has not been confirmed locally; CI installs it on the runner.
+- Gradle Wrapper — NOT YET COMMITTED. GitHub Actions first job generates Gradle 8.11.1 wrapper files and pushes them to m1-skeleton; second job builds from that exact commit. Confirm the commit from the workflow run.
 
 ## CI
 - .github/workflows/build.yml — committed; runs on push to m1-skeleton or manual dispatch.
-- Runner: Ubuntu, Temurin JDK 17, Gradle 8.11.1, Android SDK Platform 36 / Build Tools 36.0.0.
+- Wrapper job: Ubuntu + Temurin JDK 17 + Gradle 8.11.1; commits wrapper files to m1-skeleton.
+- Build job: checks out wrapper commit, installs Android SDK Platform 36 / Build Tools 36.0.0, runs assembleDebug, uploads APK and diagnostics.
 - CI build result — PENDING; do not mark M1 green until an actual successful run and APK artifact are verified.
 
 ## Agla kaam
-- M1: inspect GitHub Actions run, fix only evidenced build errors, obtain debug APK artifact, then commit generated Wrapper files to the repository.
+- M1: inspect GitHub Actions run, confirm wrapper commit, fix only evidenced build errors, obtain debug APK artifact.
