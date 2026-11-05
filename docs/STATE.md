@@ -17,7 +17,7 @@ Repo: github.com/jabir1718/Viso
 
 ## VERIFY (khula)
 - core/build.gradle.kts: Room+KSP+Hilt plugins — CONFIRMED
-- compileSdk 36 vs AGP 8.9.2 — SDK 36 platform installed
+- compileSdk 36 vs AGP 8.9.2 — VERIFY: Android SDK Platform 36 installation has not been confirmed; check on the build machine
 
 ## Agla kaam
 - M1: build green
