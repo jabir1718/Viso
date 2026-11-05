@@ -70,7 +70,7 @@ data class EffectEntity(
     val sortOrder: Int = 0
 )
 
-@Entity(tableName = "keyframe", indices = [Index("effectId"), Index(value = ["effectId", "frame"], unique = true)],
+@Entity(tableName = "keyframe", indices = [Index("effectId"), Index(value = ["effectId", "parameter", "frame"], unique = true)],
     foreignKeys = [ForeignKey(entity = EffectEntity::class, parentColumns = ["id"], childColumns = ["effectId"], onDelete = ForeignKey.CASCADE)])
 data class KeyframeEntity(
     @PrimaryKey val id: String,
